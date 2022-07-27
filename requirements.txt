@@ -1,0 +1,6 @@
+uvicorn==0.18.2
+pygination==0.0.10
+alembic==1.8.1
+sqlmodel==0.0.6
+fastapi==0.68.1
+SQLAlchemy==1.4.35
