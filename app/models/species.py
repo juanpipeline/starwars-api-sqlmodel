@@ -21,7 +21,9 @@ class Specie(SpecieBase, table=True):
     updated_at: Optional[dt.datetime] = Field(
         default=None, sa_column_kwargs={"onupdate": dt.datetime.utcnow}, nullable=True
     )
-    characters: List["Character"] = Relationship(back_populates="specie")  # noqa # type: ignore
+    characters: List["Character"] = Relationship(
+        back_populates="specie"
+    )  # noqa # type: ignore
 
 
 class SpecieRead(SpecieBase):
