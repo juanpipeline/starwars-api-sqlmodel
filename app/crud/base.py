@@ -2,7 +2,7 @@ from typing import Any, Dict, Generic, List, Optional, Type, TypeVar, Union
 
 from fastapi.encoders import jsonable_encoder
 from sqlalchemy.orm import Query
-from sqlmodel import SQLModel, select, Session
+from sqlmodel import SQLModel, Session
 
 ModelType = TypeVar("ModelType", bound=SQLModel)
 ReadSchemaType = TypeVar("ReadSchemaType", bound=SQLModel)

@@ -9,7 +9,7 @@ import datetime as dt
 class SpecieBase(SQLModel):
     name: str
     designation: str
-    classification: float
+    average_lifespan: float
     average_height: float
     language: str
     skin_color: str
@@ -21,7 +21,7 @@ class Specie(SpecieBase, table=True):
     updated_at: Optional[dt.datetime] = Field(
         default=None, sa_column_kwargs={"onupdate": dt.datetime.utcnow}, nullable=True
     )
-    characters: List["Character"] = Relationship(back_populates="specie")
+    characters: List["Character"] = Relationship(back_populates="specie")  # noqa
 
 
 class SpecieRead(SpecieBase):
@@ -37,7 +37,7 @@ class SpecieCreate(SpecieBase):
 class SpecieUpdate(SQLModel):
     name: Optional[str] = None
     designation: Optional[str] = None
-    classification: Optional[float] = None
+    average_lifespan: Optional[float] = None
     average_height: Optional[float] = None
     language: Optional[str] = None
     skin_color: Optional[str] = None
@@ -46,7 +46,7 @@ class SpecieUpdate(SQLModel):
 class SpecieSearchParams(SpecieBase):
     name: Optional[str] = None
     designation: Optional[str] = None
-    classification: Optional[float] = None
+    average_lifespan: Optional[float] = None
     average_height: Optional[float] = None
     language: Optional[str] = None
     skin_color: Optional[str] = None

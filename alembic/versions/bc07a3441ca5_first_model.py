@@ -1,8 +1,8 @@
 """first model
 
-Revision ID: baefc4fda0ff
+Revision ID: bc07a3441ca5
 Revises: 
-Create Date: 2022-07-24 18:02:07.849838
+Create Date: 2022-07-31 22:50:52.943640
 
 """
 from alembic import op
@@ -11,7 +11,7 @@ import sqlmodel
 
 
 # revision identifiers, used by Alembic.
-revision = 'baefc4fda0ff'
+revision = 'bc07a3441ca5'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -22,7 +22,7 @@ def upgrade() -> None:
     op.create_table('specie',
     sa.Column('name', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
     sa.Column('designation', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
-    sa.Column('classification', sa.Float(), nullable=False),
+    sa.Column('average_lifespan', sa.Float(), nullable=False),
     sa.Column('average_height', sa.Float(), nullable=False),
     sa.Column('language', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
     sa.Column('skin_color', sqlmodel.sql.sqltypes.AutoString(), nullable=False),
