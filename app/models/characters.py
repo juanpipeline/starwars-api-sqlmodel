@@ -44,7 +44,7 @@ class CharacterUpdate(SQLModel):
     species_id: Optional[int] = None
 
 
-class CharacterSearchParams(CharacterBase):
+class CharacterSearchParams(SQLModel):
     hair_color: Optional[str] = None
     height: Optional[float] = None
     mass: Optional[float] = None

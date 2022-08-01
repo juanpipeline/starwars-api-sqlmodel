@@ -21,7 +21,7 @@ class Specie(SpecieBase, table=True):
     updated_at: Optional[dt.datetime] = Field(
         default=None, sa_column_kwargs={"onupdate": dt.datetime.utcnow}, nullable=True
     )
-    characters: List["Character"] = Relationship(back_populates="specie")  # noqa
+    characters: List["Character"] = Relationship(back_populates="specie")  # noqa # type: ignore
 
 
 class SpecieRead(SpecieBase):
@@ -43,7 +43,7 @@ class SpecieUpdate(SQLModel):
     skin_color: Optional[str] = None
 
 
-class SpecieSearchParams(SpecieBase):
+class SpecieSearchParams(SQLModel):
     name: Optional[str] = None
     designation: Optional[str] = None
     average_lifespan: Optional[float] = None

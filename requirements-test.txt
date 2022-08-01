@@ -2,3 +2,5 @@ pytest
 black
 flake8
 requests
+mypy==0.770
+sqlalchemy-stubs
